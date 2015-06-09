@@ -83,8 +83,13 @@ function getMotion(){
     document.getElementById("rotationRatealpha").innerHTML=alpha;
     document.getElementById("rotationRatebeta").innerHTML=beta;
     document.getElementById("rotationRategamma").innerHTML=gamma;
-}               
+}
+//Store acceleremeter to the string so that we can store it into a file
+accelerationString=accelerationString.concat(key_press).concat(",").concat(accx).concat(",").concat(accy).concat(",").concat(accz).concat(",");
+accelerationGravityString=accelerationGravityString.concat(key_press).concat(",").concat(accGX).concat(",").concat(accGY).concat(",").concat(accGZ).concat(",");
+RotationString=RotationString.concat(key_press).concat(",").concat(alpha).concat(",").concat(beta).concat(",").concat(gamma).concat(",");            
 });
+window.addEventListener("devicemotion",motion,false);
 </script>
 <style type="text/css">
 body{ 
